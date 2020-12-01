@@ -1,0 +1,105 @@
+body {
+    background: #392941;
+    font-family: 'Poppins', sans-serif;
+    font-size: .75rem;
+    text-align: center;
+}
+
+.mainbody {
+   display: flex;
+   align-items: center;
+   justify-content: center; 
+}
+
+.logo {
+    width: 40%;
+    height: 40%;
+    animation: sizeLoop 2s;
+    animation-iteration-count: infinite;
+}
+
+.classe {
+    width: 55%;
+    margin-top: 35%;
+}
+
+p {
+    margin: .85rem 1rem;
+}
+
+.container {
+    position: relative;
+    width: 250px;
+    height: 320px;
+    margin: .3rem;
+    top: 2rem;
+}
+
+.thecard {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    transform-style: preserve-3d;
+    transition: all .5s ease;
+    border-radius: 1rem;
+}
+
+.thecard:hover {
+    transform: rotateY(180deg);
+    animation: glow 3s;
+    animation-iteration-count: infinite;
+}
+
+.front {
+    position: absolute;
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: #fff2ea;
+    color: cadetblue;    
+}
+
+.back {
+    position: absolute;
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: #3a3a3a;
+    color: rgb(255, 255, 255);
+    transform: rotateY(180deg);
+}
+
+@keyframes sizeLoop {
+    from {
+        transform: scale(1);
+    }
+    
+    50% {
+        transform: scale(1.05);
+    }
+    
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes glow {
+    from {box-shadow: 0 0 10px  #4d3659;}
+    50% {box-shadow: 0 0 20px #a5ebd8;}
+    to {box-shadow: 0 0 10px  #4d3659;}
+}
+
+@media only screen and (max-width: 600px) {
+
+    .logo {
+        width: 80%;
+        margin-right: 5rem;
+    }
+    .mainbody {
+        display: block;
+        margin-left: 12%;
+        margin-right: auto;
+    }
+  }
